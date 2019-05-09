@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>style strony logowania</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <link rel="stylesheet" href="style.css" type="text/css"
+
+</head>
+<body>
+    <div id = "container">
+            
+        <!--placeholder to to co w środku napisane pola przed pisaniem-->
+        <!--obiekt to nasze pole i jego właściwością jest placeholder dlatego korzystamy z JS aby sprawić by przykładowe napisy wewnątrz znikały po tym jak na nich jest fokus ustawiony, this odnosi się do tego obiektu, zwalnai z potrzeby tworzenia identyfikatora -->
+        <!--onblur utrata fokusa takie zdarzenie-->
+        <!--zmiana koloru w CSS placeholdera nie mają sesnu jak wyłączasz go przy fokusie-->
+
+            <input type = "text" placeholder="Login" onfocus="this.placeholder=''" onblur="this.placeholder='Login'">
+            
+
+
+            
+            <input type = "password" placeholder="Hasło" onfocus="this.placeholder=''" onblur="this.placeholder='Hasło'">
+            
+
+            <input type = "submit" value="Zaloguj się">
+    </div>  
+
+</body>
+</html>

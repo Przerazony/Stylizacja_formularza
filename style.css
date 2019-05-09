@@ -1,0 +1,125 @@
+body
+{
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url("img/tlo.png");
+    font-size: 20px;
+}
+#container
+{
+    background-color: white;
+    width: 300px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    /*box-shadow: prostokątny cień - w google można wpisać boxshadow creator tam gotowe wygenerowane wpisy*/
+
+    /*pozycje: poziom pion promień rozmazania zasięg_skala kolor */
+    /*dlaczego są trzy linie? by była kompatybilna w wielu przeglądarkach*/
+    /*moz = Mozilla Firefox*/
+    /*webkit = silnik (engine) renderowania stron www, użyty m.in w Chromie, Safari, Operze*/
+-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9); 
+}
+
+/*ani klasa ani ID znacznik jak body*/
+/*jest wiele typów inputów więc a by nie musieć każdego obkładać klasą są one już podzielone na typy*/
+/*jest tablica inputów i z niej wybieramy które teraz okodujmy stylem, przecinkiem dwa naraz by niepotrzebnie nie*/
+input[type=text],
+input[type=password]
+{
+    width: 300px;
+    background-color: #EFEFEF;
+    color: #666;
+    /*w trzech cyfrach skrócony zapis koloru można*/
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    /*trzeba ustawić gdyż inputy nie dziedziczą rozmiaru czcionki po znaczniku body (zbyt często byłby to problem stąd czcionka elementów interfejsu jest poza kaskadą)*/
+    font-size: 20px;
+    padding: 10px;
+    /*w polach edycyjnych stosujemy zasadę obliczania rozmiaru wg zawartości pola (contentu)
+    dlatego padding rozszerza szerokość pól edycyjnych u nas login i hasło, dlatego może się zdażyć że przy stylizacji pole zaloguj czyli submit będzie krótsze niż te i trzeba to naprawić używając box-sizing takiego jak przycisk
+    */
+    box-sizing: border-box;
+    /*domyślne niebieskie wyróżnienie pola zostanie zlikwidowane czyli outline*/
+    outline: none;
+    /*usunęliśmy <br./> z kodu, nie stosuje się go gdyż to ogranicza możliwości stylizowanai strony, ponaddo posiada inne  wartości w zależności od przeglądarek, dlatego rozdzielamy to tu marginem*/
+    margin-top: 10px;
+
+}
+/*przygotowanie własnej sytuacji gdy pole zyskuje aktywność focus - ten input w centrum*/
+input[type=text]:focus,
+input[type=password]:focus
+{
+-webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+-moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9); 
+border: 2px solid #a5cda5;
+background-color: #e9f3e9;
+/*czcionka jest kolorowa tylko gdy pole aktywne najs!! :D*/
+color: #428c42;
+
+}
+
+input[type=submit]:focus
+{
+-webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+-moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9); 
+}
+
+
+
+input[type=submit]
+{
+    width: 300px;
+    background-color: #36b03c;
+    font-size: 20px;
+    color: white;
+    padding: 15px 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+input[type=submit]:hover
+{
+    background-color: #37b93d
+}
+/*stylizowanie tego aby po aktywowaniu pola input text przykładowy zmieniał kolor*/
+input::-webkit-input-placeholder
+{
+    color: #999;
+}
+input:focus::-webkit-input-placeholder
+{
+    color: #428c42;
+}
+/*firefox >19*/
+input::-moz-placeholder
+{
+    color: #999;
+}input:focus::-moz-placeholder
+{
+    color: #428c42;
+}
+/*firefox <19*/
+input:-moz-placeholder
+{
+    color: #999;
+}
+input:focus:-moz-placeholder
+{
+    color: #428c42;
+}
+/*Internet explorer 10*/
+input:-ms-input-placeholder
+{
+    color: #999;
+}
+input:focus:-ms-input-placeholder
+{
+    color: #428c42;
+}
